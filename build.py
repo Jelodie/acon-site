@@ -97,7 +97,7 @@ FOOTER = '''  <footer class="site-footer">
           <p><small>
             Mairie : 02 32 32 53 49<br>
             <a href="https://www.service-public.fr">Service-Public.fr</a><br>
-            <a href="https://www.facebook.com/acon27570/">Facebook du village</a><br>
+            <a href="actualites.html">Actualités du village</a><br>
             Élec. (Enedis) : 09 72 67 50 27<br>
             Gaz (GRDF) : 0 800 47 33 33
           </small></p>
@@ -226,7 +226,6 @@ PAGES["index.html"] = dict(active="accueil",
         <p>Pour ne rien manquer des nouvelles, des travaux et des rendez-vous de la commune :</p>
         <ul>
           <li>La page <strong>Actualités &amp; agenda</strong> du site : <a href="actualites.html">les rendez-vous du village</a></li>
-          <li><strong>Page Facebook « Commune d'Acon »</strong>, photos et actualités partagées par les habitants : <a href="https://www.facebook.com/acon27570/">facebook.com/acon27570</a></li>
           <li><strong>PanneauPocket</strong>, les alertes et informations de la mairie sur votre téléphone : <a href="https://app.panneaupocket.com/ville/970037196-acon-27570">appli PanneauPocket · Acon</a></li>
         </ul>
         <p class="invite">Une info à corriger, une photo ancienne à partager, une bonne adresse à ajouter ? Ce site grandit avec vous. {mail("Écrivez-nous")}</p>
@@ -451,7 +450,7 @@ PAGES["infos-pratiques.html"] = dict(active="pratique",
           <dt>Téléphone</dt><dd><a href="tel:+33232325349">02 32 32 53 49</a></dd>
           <dt>Courriel</dt><dd>acon.eure@wanadoo.fr</dd>
           <dt>Horaires</dt><dd>Lundi et mercredi de 17 h à 19 h. Les horaires peuvent évoluer : un coup de fil avant de se déplacer reste le plus sûr.</dd>
-          <dt>Actualités</dt><dd>La <a href="https://www.facebook.com/acon27570/">page Facebook « Commune d'Acon »</a> et l'application PanneauPocket. <small>(L'ancien site mairie-acon.fr n'est plus en ligne.)</small></dd>
+          <dt>Actualités</dt><dd>La page <a href="actualites.html">Actualités &amp; agenda</a> et l'application PanneauPocket. <small>(L'ancien site mairie-acon.fr n'est plus en ligne.)</small></dd>
         </dl>
         <div class="result">
           <p class="eyebrow" style="margin-bottom:.4rem">Élections municipales 2026</p>
@@ -991,7 +990,7 @@ PAGES["mentions-legales.html"] = dict(active="apropos",
         <p class="eyebrow">Vie privée</p>
         <h2>Données personnelles &amp; cookies</h2>
         <p>Ce site <strong>ne collecte aucune donnée personnelle</strong>, ne dépose <strong>aucun cookie</strong> de suivi et n'utilise aucun outil de mesure d'audience. Si vous écrivez à l'adresse de contact, votre message et votre adresse e-mail servent uniquement à vous répondre, et ne sont ni conservés à d'autres fins ni transmis à des tiers.</p>
-        <p><small>Les liens vers des sites tiers (service-public.fr, Facebook, Archives de l'Eure, fournisseurs…) sont fournis pour votre information ; leur contenu relève de leurs éditeurs respectifs.</small></p>
+        <p><small>Les liens vers des sites tiers (service-public.fr, Archives de l'Eure, fournisseurs…) sont fournis pour votre information ; leur contenu relève de leurs éditeurs respectifs.</small></p>
       </div>
     </section>''')
 
@@ -1035,7 +1034,7 @@ PAGES["contact.html"] = dict(active="contact",
       <div class="wrap mesure">
         <p class="eyebrow">Rappel</p>
         <h2>Pour vos démarches officielles</h2>
-        <p>Ce site est indépendant et non officiel. Pour l'état civil, l'urbanisme ou toute démarche, adressez-vous à la <strong>mairie d'Acon</strong> (02 32 32 53 49) ou à <a href="https://www.service-public.fr">service-public.fr</a>. Pour les actualités de la commune, suivez la <a href="https://www.facebook.com/acon27570/">page Facebook « Commune d'Acon »</a>.</p>
+        <p>Ce site est indépendant et non officiel. Pour l'état civil, l'urbanisme ou toute démarche, adressez-vous à la <strong>mairie d'Acon</strong> (02 32 32 53 49) ou à <a href="https://www.service-public.fr">service-public.fr</a>. Pour les actualités de la commune, voir la page <a href="actualites.html">Actualités &amp; agenda</a>.</p>
       </div>
     </section>''')
 
@@ -1044,7 +1043,7 @@ PAGES["contact.html"] = dict(active="contact",
 # ======================================================================
 PAGES["actualites.html"] = dict(active="pratique",
   title="Actualités &amp; agenda, Acon (Eure)",
-  desc="Actualités et agenda de la commune d'Acon (Eure) : rendez-vous, fêtes et vie associative. Suivez la page Facebook et PanneauPocket.",
+  desc="Actualités et agenda de la commune d'Acon (Eure) : rendez-vous, fêtes et vie associative. Suivez PanneauPocket.",
   body=f'''    <section class="hero">
       <div class="wrap">
         <span class="badge"><span class="dot"></span> Vie du village</span>
@@ -1057,15 +1056,15 @@ PAGES["actualites.html"] = dict(active="pratique",
       <div class="wrap mesure">
         <p class="eyebrow">Rester informé</p>
         <h2>Les nouvelles, en direct</h2>
-        <p>Pour suivre l'actualité de la commune au jour le jour, deux canaux tenus par la mairie :</p>
+        <p>Pour suivre l'actualité de la commune au jour le jour :</p>
         <div class="contacts">
           <div class="contact-card">
-            <h3>Facebook « Commune d'Acon »</h3>
-            <p>Photos, informations et annonces partagées régulièrement. <a href="https://www.facebook.com/acon27570/">Voir la page</a>.</p>
+            <h3>PanneauPocket</h3>
+            <p>Les alertes et informations de la mairie directement sur votre téléphone, gratuitement et sans inscription. <a href="https://app.panneaupocket.com/ville/970037196-acon-27570">Ouvrir Acon</a>.</p>
           </div>
           <div class="contact-card">
-            <h3>PanneauPocket</h3>
-            <p>Les alertes et informations de la mairie directement sur votre téléphone. <a href="https://app.panneaupocket.com/ville/970037196-acon-27570">Ouvrir Acon</a>.</p>
+            <h3>Le panneau d'affichage</h3>
+            <p>Les annonces officielles restent affichées devant la mairie, 8 rue de la Mairie (Le Rousset).</p>
           </div>
         </div>
       </div>
@@ -1075,7 +1074,7 @@ PAGES["actualites.html"] = dict(active="pratique",
       <div class="wrap mesure">
         <p class="eyebrow">Au fil des saisons</p>
         <h2>Les rendez-vous du village</h2>
-        <p>Fêtes de village, moments conviviaux, rendez-vous associatifs et cérémonies rythment l'année à Acon. Les dates de la saison à venir seront annoncées ici et sur la page Facebook de la commune dès qu'elles sont connues.</p>
+        <p>Fêtes de village, moments conviviaux, rendez-vous associatifs et cérémonies rythment l'année à Acon. Les dates de la saison à venir seront annoncées ici et sur PanneauPocket dès qu'elles sont connues.</p>
         <p class="invite">Vous organisez un événement ouvert aux habitants et souhaitez le faire connaître ? {mail("Signalez-le")} : il pourra être relayé sur cette page.</p>
       </div>
     </section>''')

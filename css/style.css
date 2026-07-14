@@ -48,7 +48,7 @@ body {
   background-image:
     radial-gradient(120% 80% at 100% 0%, rgba(192,138,46,.07), transparent 55%),
     radial-gradient(90% 70% at 0% 100%, rgba(47,106,72,.06), transparent 55%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
   background-attachment: fixed, fixed, scroll;
   line-height: 1.68;
   font-size: 1.03rem;
@@ -62,7 +62,7 @@ h3 { font-size: 1.22rem; }
 
 p { margin: 0 0 1rem; }
 a { color: var(--vert-fonce); text-decoration-color: var(--or); text-underline-offset: 3px; }
-a:hover { color: var(--rouge); }
+a:hover { color: var(--or); }
 
 img { max-width: 100%; display: block; }
 
@@ -142,7 +142,7 @@ img { max-width: 100%; display: block; }
   color: var(--vert-fonce); font-weight: 600; font-size: .8rem; letter-spacing: .04em;
   padding: .35rem .7rem; border-radius: 999px; margin-bottom: 1.4rem;
 }
-.hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rouge); }
+.hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--or); }
 .hero .lead { font-size: clamp(1.05rem, 2.2vw, 1.28rem); color: var(--encre); max-width: 40rem; }
 .hero .sub { font-family: var(--display); font-style: italic; color: var(--vert-fonce); font-size: clamp(1.15rem,2.4vw,1.5rem); margin: -.2rem 0 1.2rem; }
 
@@ -213,7 +213,7 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px -14px rgba(3
   content: ""; position: absolute; left: -7px; top: .35rem;
   width: 12px; height: 12px; border-radius: 50%; background: var(--vert-eure); border: 2px solid var(--parchemin);
 }
-.timeline .an { font-family: var(--display); font-size: 1.15rem; color: var(--rouge); font-weight: 600; }
+.timeline .an { font-family: var(--display); font-size: 1.15rem; color: var(--vert-fonce); font-weight: 600; }
 .timeline p { margin: .1rem 0 0; color: var(--encre); }
 
 /* ---------- Pied de page ---------- */
@@ -362,7 +362,7 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .brand b { color: var(--vert-fonce); }
 
 /* Intertitres (eyebrow) avec un petit trait doré */
-.eyebrow { display: inline-flex; align-items: center; gap: .55rem; color: var(--rouge); }
+.eyebrow { display: inline-flex; align-items: center; gap: .55rem; color: var(--vert-eure); }
 .eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: var(--or); border-radius: 2px; }
 
 /* Titres de section : filet fin sous le h2 pour rythmer */
@@ -412,7 +412,7 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .almanach .saint { color: var(--gris); font-size: .86rem; }
 .almanach .meteo { display: inline-flex; align-items: center; gap: .4rem; padding-left: 1rem; border-left: 1px solid var(--ligne); }
 .almanach .meteo .ico { font-size: 1.25rem; }
-.almanach .meteo .temp { font-family: var(--display); font-weight: 600; color: var(--rouge); font-size: 1.05rem; }
+.almanach .meteo .temp { font-family: var(--display); font-weight: 600; color: var(--vert-fonce); font-size: 1.05rem; }
 .almanach .meteo .desc { font-size: .82rem; color: var(--gris); }
 @media (max-width: 460px) { .almanach { border-radius: 16px; } .almanach .meteo { border-left: 0; padding-left: 0; } }
 
@@ -426,13 +426,13 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .band-facts { padding: 1.4rem 0 clamp(2rem, 4vw, 3rem); }
 .facts { box-shadow: 0 20px 40px -30px rgba(44,39,30,.55); }
 .facts div { background: var(--blanc); }
-.facts .n { color: var(--rouge); }
+.facts .n { color: var(--vert-fonce); }
 
-/* ---------- Cartes : plus chaleureuses, filet doré au survol ---------- */
-.card { border-radius: 14px; box-shadow: 0 12px 26px -22px rgba(44,39,30,.45); position: relative; overflow: hidden; }
-.card::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--or), var(--rouge)); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+/* ---------- Cartes : filet doré au survol ---------- */
+.card { border-radius: 16px; box-shadow: 0 14px 30px -24px rgba(44,39,30,.4); position: relative; overflow: hidden; }
+.card::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--or), var(--vert-eure)); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
 a.card:hover::before { transform: scaleX(1); }
-.card .tag { color: var(--rouge); }
+.card .tag { color: var(--or); }
 
 /* Badges/hero classiques (autres pages) réchauffés */
 .hero:not(.cover) { background:
@@ -440,14 +440,14 @@ a.card:hover::before { transform: scaleX(1); }
   radial-gradient(90% 70% at -10% 120%, rgba(47,106,72,.10), transparent 55%); }
 
 /* Callouts & résultats : liseré doré */
-.callout { border-left-color: var(--rouge); }
+.callout { border-left-color: var(--or); }
 .result { border-left-color: var(--or); }
 
-/* Boutons pleins, chaleureux */
-.btn, .contact-mail, .form-contact button { box-shadow: 0 10px 22px -14px rgba(126,36,30,.6); }
+/* Boutons pleins */
+.btn, .contact-mail, .form-contact button { box-shadow: 0 10px 22px -14px rgba(30,74,51,.6); }
 
 /* Signature manuscrite (À propos) */
-.signature { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--rouge); margin: 1.4rem 0 .4rem; }
+.signature { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.7rem; color: var(--vert-fonce); margin: 1.4rem 0 .4rem; }
 
 /* Liens plus présents */
 a { text-decoration-thickness: 1.5px; }
@@ -457,3 +457,16 @@ a { text-decoration-thickness: 1.5px; }
 
 /* Pied de page : un liseré doré en haut */
 .site-footer { box-shadow: inset 0 3px 0 var(--or); }
+
+/* ---------- Finitions contemporaines ---------- */
+.section { padding: clamp(2.8rem, 5.5vw, 4.6rem) 0; }
+.hero:not(.cover) { padding-bottom: clamp(2rem, 4vw, 3rem); }
+.badge { font-weight: 600; letter-spacing: .02em; }
+.btn, .contact-mail { letter-spacing: .01em; }
+.card, .contact-card, figure.photo, .today, .result, .calendrier a { transition: transform .2s ease, box-shadow .2s ease; }
+a.card:hover, .contact-card:hover { transform: translateY(-3px); }
+.nav a { transition: background .15s ease, color .15s ease; }
+/* Rythme de lecture un peu plus aéré */
+.section .mesure p { max-width: 42rem; }
+/* Filet fin sous les grands titres de section pour structurer */
+.section h2 { padding-bottom: .1rem; }
