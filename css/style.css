@@ -1,0 +1,219 @@
+/* =========================================================
+   Acon — site d'information du village
+   Palette ancrée dans l'Eure (vert) et la Normandie (or & rouge héraldiques).
+   Un seul fichier de styles, volontairement simple à faire évoluer.
+   ========================================================= */
+
+:root {
+  /* Couleurs */
+  --vert-eure:   #2E6B47;  /* vert du département de l'Eure (nature) */
+  --vert-fonce:  #215034;
+  --or:          #C79A3B;  /* or héraldique de Normandie */
+  --or-clair:    #E4CB92;
+  --rouge:       #9B2D27;  /* rouge (gueules) de Normandie, à petites doses */
+  --parchemin:   #FBF7ED;  /* fond, esprit papier ancien */
+  --parchemin-2: #F2EAD6;
+  --encre:       #232E28;  /* texte */
+  --gris:        #6C7268;
+  --blanc:       #FFFFFF;
+  --ligne:       #E4DcC5;
+
+  /* Type */
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --corps:   "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Mesures */
+  --contenu: 68rem;
+  --texte:   46rem;
+  --radius:  10px;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--corps);
+  color: var(--encre);
+  background: var(--parchemin);
+  line-height: 1.65;
+  font-size: 1.02rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 560; line-height: 1.12; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1rem; }
+a { color: var(--vert-fonce); text-decoration-color: var(--or); text-underline-offset: 3px; }
+a:hover { color: var(--rouge); }
+
+img { max-width: 100%; display: block; }
+
+.wrap { width: min(100% - 2.5rem, var(--contenu)); margin-inline: auto; }
+.mesure { max-width: var(--texte); }
+
+.eyebrow {
+  font-family: var(--corps);
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--vert-eure);
+  font-weight: 600;
+  margin: 0 0 .9rem;
+}
+
+/* Accessibilité */
+:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; border-radius: 4px; }
+.skip {
+  position: absolute; left: -999px; top: 0; background: var(--vert-fonce); color: #fff;
+  padding: .6rem 1rem; border-radius: 0 0 8px 0; z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* ---------- En-tête / navigation ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251, 247, 237, .92);
+  backdrop-filter: saturate(1.2) blur(6px);
+  border-bottom: 1px solid var(--ligne);
+}
+.site-header .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: .7rem 0;
+}
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--encre); }
+.brand .crest { width: 30px; height: 34px; flex: none; }
+.brand b { font-family: var(--display); font-size: 1.35rem; font-weight: 600; letter-spacing: .01em; }
+.brand small { display: block; font-family: var(--corps); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gris); }
+
+.nav { display: flex; gap: .4rem; align-items: center; }
+.nav a {
+  text-decoration: none; color: var(--encre); font-weight: 500; font-size: .95rem;
+  padding: .45rem .7rem; border-radius: 7px;
+}
+.nav a:hover { background: var(--parchemin-2); color: var(--vert-fonce); }
+.nav a[aria-current="page"] { color: var(--vert-fonce); box-shadow: inset 0 -2px 0 var(--or); }
+
+.nav-toggle {
+  display: none; border: 1px solid var(--ligne); background: var(--blanc);
+  border-radius: 8px; padding: .5rem .7rem; font: inherit; cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; align-items: center; gap: .4rem; }
+  .nav {
+    position: absolute; inset: 100% 0 auto 0; flex-direction: column; align-items: stretch;
+    background: var(--parchemin); border-bottom: 1px solid var(--ligne);
+    padding: .5rem 1.25rem 1rem; gap: .1rem; display: none;
+  }
+  .nav.open { display: flex; }
+  .nav a { padding: .7rem .5rem; }
+}
+
+/* ---------- Bandeau « non officiel » ---------- */
+.notice {
+  background: var(--vert-fonce); color: #f4efe1; font-size: .82rem; text-align: center;
+  padding: .45rem 1rem;
+}
+.notice a { color: var(--or-clair); }
+
+/* ---------- Héros ---------- */
+.hero { padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem); }
+.hero .badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--parchemin-2); border: 1px solid var(--ligne);
+  color: var(--vert-fonce); font-weight: 600; font-size: .8rem; letter-spacing: .04em;
+  padding: .35rem .7rem; border-radius: 999px; margin-bottom: 1.4rem;
+}
+.hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rouge); }
+.hero .lead { font-size: clamp(1.05rem, 2.2vw, 1.28rem); color: var(--encre); max-width: 40rem; }
+.hero .sub { font-family: var(--display); font-style: italic; color: var(--vert-fonce); font-size: clamp(1.15rem,2.4vw,1.5rem); margin: -.2rem 0 1.2rem; }
+
+/* ---------- Sections ---------- */
+.section { padding: clamp(2.4rem, 5vw, 4rem) 0; }
+.section + .section { border-top: 1px solid var(--ligne); }
+.section-alt { background: var(--parchemin-2); }
+.section .kicker { margin-bottom: 1.6rem; }
+
+/* Grille de cartes */
+.grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.card {
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--radius);
+  padding: 1.4rem; text-decoration: none; color: inherit; display: block;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+a.card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px -14px rgba(33,80,52,.5); }
+.card h3 { color: var(--vert-fonce); margin-bottom: .3rem; }
+.card p { color: var(--gris); font-size: .95rem; margin: 0; }
+.card .arrow { color: var(--or); font-weight: 700; }
+
+/* Listes d'infos (mairie, numéros utiles) */
+.def { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.2rem; margin: 0; }
+.def dt { font-weight: 600; color: var(--vert-fonce); }
+.def dd { margin: 0; }
+@media (max-width: 520px) { .def { grid-template-columns: 1fr; gap: .1rem 0; } .def dd { margin-bottom: .6rem; } }
+
+.callout {
+  border-left: 4px solid var(--or); background: var(--parchemin-2);
+  padding: 1rem 1.2rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.4rem 0;
+}
+.callout strong { color: var(--vert-fonce); }
+
+.todo { color: var(--rouge); font-style: italic; } /* repères à compléter — à retirer une fois renseigné */
+
+/* ---------- Signature : galerie de cartes postales ---------- */
+.gallery { display: grid; gap: 1.6rem 1.2rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); margin-top: 1.8rem; }
+.postcard {
+  background: #fffdf6;
+  border: 1px solid #e7dcc0;
+  border-radius: 4px;
+  padding: .7rem .7rem 1rem;
+  box-shadow: 0 12px 22px -16px rgba(33,80,52,.55);
+  transform: rotate(var(--tilt, -1deg));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.postcard:nth-child(even) { --tilt: 1.2deg; }
+.postcard:nth-child(3n)   { --tilt: -.6deg; }
+.postcard:hover { transform: rotate(0) translateY(-4px); box-shadow: 0 18px 30px -18px rgba(33,80,52,.6); }
+.postcard .frame {
+  aspect-ratio: 3 / 2; background:
+    repeating-linear-gradient(45deg, #efe7d2, #efe7d2 10px, #eae0c7 10px, #eae0c7 20px);
+  border: 1px solid #ded1af; border-radius: 2px;
+  display: grid; place-items: center; color: #a9986c; text-align: center;
+  font-size: .8rem; padding: 1rem; overflow: hidden;
+}
+.postcard .frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+.postcard figcaption {
+  font-family: var(--display); font-size: .98rem; color: var(--vert-fonce);
+  margin-top: .6rem; line-height: 1.35;
+}
+.postcard .date { display: block; font-family: var(--corps); font-size: .78rem; color: var(--gris); letter-spacing: .03em; }
+
+/* ---------- Frise chronologique ---------- */
+.timeline { list-style: none; margin: 1.6rem 0 0; padding: 0; border-left: 2px solid var(--or); }
+.timeline li { position: relative; padding: 0 0 1.6rem 1.6rem; }
+.timeline li::before {
+  content: ""; position: absolute; left: -7px; top: .35rem;
+  width: 12px; height: 12px; border-radius: 50%; background: var(--vert-eure); border: 2px solid var(--parchemin);
+}
+.timeline .an { font-family: var(--display); font-size: 1.15rem; color: var(--rouge); font-weight: 600; }
+.timeline p { margin: .1rem 0 0; color: var(--encre); }
+
+/* ---------- Pied de page ---------- */
+.site-footer { background: var(--vert-fonce); color: #e9e2d1; margin-top: 2rem; }
+.site-footer .wrap { padding: 2.4rem 0 2rem; }
+.site-footer h3 { color: #fff; }
+.site-footer a { color: var(--or-clair); }
+.site-footer .cols { display: grid; gap: 1.4rem 2rem; grid-template-columns: 1.4fr 1fr 1fr; }
+@media (max-width: 640px) { .site-footer .cols { grid-template-columns: 1fr; } }
+.site-footer small { color: #c9c0ac; }
+.foot-note { border-top: 1px solid rgba(255,255,255,.15); margin-top: 1.6rem; padding-top: 1rem; font-size: .85rem; }
