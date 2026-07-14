@@ -37,7 +37,7 @@ def header(active):
         links.append(f'        <a href="{href}"{cur}>{label}</a>')
     nav = "\n".join(links)
     return f'''  <a class="skip" href="#contenu">Aller au contenu</a>
-  <div class="notice">Site bénévole et indépendant, sans lien avec la mairie — pour vos démarches officielles, rendez-vous sur <a href="https://mairie-acon.fr">mairie-acon.fr</a>.</div>
+  <div class="notice">Site bénévole et indépendant, sans lien avec la mairie d'Acon — pour vos démarches officielles, voir <a href="https://www.service-public.fr">service-public.fr</a>.</div>
 
   <header class="site-header">
     <div class="wrap bar">
@@ -84,15 +84,15 @@ FOOTER = '''  <footer class="site-footer">
         <div>
           <h3>Officiel &amp; urgences</h3>
           <p><small>
-            <a href="https://mairie-acon.fr">Mairie d'Acon</a><br>
+            Mairie : 02 32 32 53 49<br>
             <a href="https://www.service-public.fr">Service-Public.fr</a><br>
-            Urgences : 112 · SAMU 15<br>
+            <a href="https://www.facebook.com/acon27570/">Facebook du village</a><br>
             Élec. (Enedis) : 09 72 67 50 27<br>
             Gaz (GRDF) : 0 800 47 33 33
           </small></p>
         </div>
       </div>
-      <p class="foot-note"><small>Site d'information bénévole et non officiel, sans lien avec la mairie d'Acon. © <span class="js-annee">2026</span>. Photographies sous licence Creative Commons (voir <a href="apropos.html">À propos</a>). Fait avec soin pour les Aconnais et les Aconnaises.</small></p>
+      <p class="foot-note"><small>Site d'information bénévole et non officiel, sans lien avec la mairie d'Acon. © <span class="js-annee">2026</span> · <a href="mentions-legales.html">Mentions légales</a> · crédits photos sur <a href="apropos.html">À propos</a>. Fait avec soin pour les Aconnais et les Aconnaises.</small></p>
     </div>
   </footer>
 '''
@@ -344,6 +344,7 @@ PAGES["histoire.html"] = dict(active="histoire",
         <p class="eyebrow" style="margin-top:2.2rem">Les hameaux</p>
         <h2>Des noms qui racontent</h2>
         <p>Le <strong>Mesnil</strong> — de <em>Le Mesnil-Pipaut</em> — évoque un petit domaine rural et une famille médiévale, les Pipart. <strong>Les Brûlés</strong>, écrits autrefois « Les Bullez », et <strong>Le Rousset</strong>, jadis « Le Roiset », complètent le trio. Ensemble, ils forment la commune telle qu'on la connaît, de part et d'autre de l'Avre.</p>
+        <p>C'est au <strong>Rousset</strong> que battait le cœur du village d'autrefois : les cartes postales du début du XXᵉ siècle y montrent l'<strong>école communale</strong>, un <strong>château</strong> et un <strong>manoir</strong>, le pont et le lavoir sur l'Avre — autant de lieux que l'on retrouve dans la collection ci-dessous.</p>
       </div>
     </section>
 
@@ -364,13 +365,20 @@ PAGES["histoire.html"] = dict(active="histoire",
     <section class="section section-alt">
       <div class="wrap">
         <p class="eyebrow kicker">Collection</p>
-        <h2>Cartes postales &amp; photographies anciennes</h2>
-        <p class="mesure">Le village d'autrefois — le lavoir du Rousset, l'église, la rivière d'Avre — revit à travers les cartes postales anciennes. Cette collection est à constituer avec vous : un tiroir, un album de famille, une carte oubliée peuvent devenir une page d'histoire partagée.</p>
+        <h2>Cartes postales anciennes</h2>
+        <p class="mesure">Le village d'autrefois — l'église, le lavoir et le pont, les bords de l'Avre, le château et le manoir du Rousset — revit à travers ces cartes postales des années 1890 à 1950, conservées aux <strong>Archives départementales de l'Eure</strong> (série 8 Fi 2). Cliquez pour les voir en plus grand sur le site des Archives.</p>
         <div class="gallery">
-          <figure class="postcard"><div class="frame">Le Rousset d'Acon<br>Le lavoir &amp; le château</div><figcaption>Acon — Le Rousset <span class="date">carte à retrouver</span></figcaption></figure>
-          <figure class="postcard"><div class="frame">L'église &amp; le cimetière</div><figcaption>Acon — L'église <span class="date">carte à retrouver</span></figcaption></figure>
-          <figure class="postcard"><div class="frame">La rivière d'Avre</div><figcaption>Acon — La vallée de l'Avre <span class="date">carte à retrouver</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/eglise.jpg" alt="Carte postale ancienne : l'église d'Acon"></div></a><figcaption>Acon — L'église <span class="date">vers 1900 · AD Eure 8 Fi 2-4</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/pont-lavoir.jpg" alt="Carte postale ancienne : le pont et le lavoir du Rousset d'Acon"></div></a><figcaption>Le Rousset — Le pont &amp; le lavoir <span class="date">AD Eure 8 Fi 2-11</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/bord-avre.jpg" alt="Carte postale ancienne : les bords de l'Avre au Rousset d'Acon"></div></a><figcaption>Le Rousset — Bords de l'Avre <span class="date">AD Eure 8 Fi 2-10</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/chateau.jpg" alt="Carte postale ancienne : le château d'Acon"></div></a><figcaption>Acon — Le château <span class="date">AD Eure 8 Fi 2-7</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/manoir.jpg" alt="Carte postale ancienne : le manoir du Rousset d'Acon"></div></a><figcaption>Le Rousset — Le manoir <span class="date">AD Eure 8 Fi 2-8</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/ecole.jpg" alt="Carte postale ancienne : l'école communale du Rousset d'Acon"></div></a><figcaption>Le Rousset — L'école communale <span class="date">AD Eure 8 Fi 2-3</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/ferme-mesnil.jpg" alt="Carte postale ancienne : la ferme du Mesnil d'Acon"></div></a><figcaption>La ferme du Mesnil d'Acon <span class="date">AD Eure 8 Fi 2-9</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/route-paris.jpg" alt="Carte postale ancienne : la route de Paris à Acon"></div></a><figcaption>Acon — La route de Paris <span class="date">AD Eure 8 Fi 2-1</span></figcaption></figure>
+          <figure class="postcard"><a href="https://archives.eure.fr/search/results?q=Acon" target="_blank" rel="noopener"><div class="frame"><img src="assets/photos/cpa/route-paris-brest.jpg" alt="Carte postale ancienne : perspective de la route de Paris-Brest à Acon"></div></a><figcaption>Acon — Route de Paris-Brest <span class="date">AD Eure 8 Fi 2-2</span></figcaption></figure>
         </div>
+        <p style="margin-top:1rem"><small>Reproductions : <strong>Archives départementales de l'Eure</strong>, série 8 Fi 2 (cartes postales, [1890]-[1950]). Différents photographes et éditeurs — <a href="https://archives.eure.fr/search/results?q=Acon">consulter le fonds « Acon »</a>.</small></p>
         <div class="tip">
           <span class="ico" aria-hidden="true">🖼️</span>
           <p>Vous possédez une carte postale ou une photo ancienne d'Acon ? On peut la numériser et l'ajouter ici, avec votre accord. {mail("Contribuer à la collection")}</p>
@@ -389,7 +397,7 @@ PAGES["histoire.html"] = dict(active="histoire",
           <li><strong>La mairie et les habitants</strong> — souvent la meilleure source : registres récents, souvenirs et albums de famille.</li>
         </ul>
         <div class="callout">
-          <strong>Droits d'usage :</strong> une carte postale ancienne n'est pas toujours libre de droits, et le scan appartient à celui qui l'a réalisé. On vérifie chaque image et, au moindre doute, on demande l'autorisation avant de la publier.
+          <strong>Droits d'usage :</strong> les cartes postales ci-dessus proviennent du fonds des Archives départementales de l'Eure (série 8 Fi 2). Les vues, anciennes, sont pour la plupart tombées dans le domaine public ; la reproduction reste créditée aux Archives de l'Eure. Pour un usage commercial, adressez-vous directement aux Archives.
         </div>
       </div>
     </section>''')
@@ -418,7 +426,7 @@ PAGES["infos-pratiques.html"] = dict(active="pratique",
           <dt>Téléphone</dt><dd><a href="tel:+33232325349">02 32 32 53 49</a></dd>
           <dt>Courriel</dt><dd>acon.eure@wanadoo.fr</dd>
           <dt>Horaires</dt><dd>Lundi et mercredi de 17 h à 19 h. Les horaires peuvent évoluer : un coup de fil avant de se déplacer reste le plus sûr.</dd>
-          <dt>Site officiel</dt><dd><a href="https://mairie-acon.fr">mairie-acon.fr</a></dd>
+          <dt>Actualités</dt><dd>La <a href="https://www.facebook.com/acon27570/">page Facebook « Commune d'Acon »</a> et l'application PanneauPocket. <small>(L'ancien site mairie-acon.fr n'est plus en ligne.)</small></dd>
         </dl>
         <div class="result">
           <p class="eyebrow" style="margin-bottom:.4rem">Élections municipales 2026</p>
@@ -846,7 +854,7 @@ PAGES["apropos.html"] = dict(active="apropos",
       <div class="wrap mesure">
         <p class="eyebrow">Indépendance</p>
         <h2>Un site sans lien avec la mairie</h2>
-        <p>Ce site est <strong>totalement indépendant de la commune d'Acon et de son site officiel</strong>. Il n'émane pas de la municipalité, ne l'engage en rien et n'a aucun caractère officiel. Pour toute démarche ou information officielle, la référence reste la mairie — <a href="https://mairie-acon.fr">mairie-acon.fr</a> — et <a href="https://www.service-public.fr">service-public.fr</a>.</p>
+        <p>Ce site est <strong>totalement indépendant de la commune d'Acon</strong>. Il n'émane pas de la municipalité, ne l'engage en rien et n'a aucun caractère officiel. Pour toute démarche ou information officielle, la référence reste la mairie (02 32 32 53 49) et <a href="https://www.service-public.fr">service-public.fr</a>. <small>L'ancien site officiel <em>mairie-acon.fr</em> n'est plus en ligne depuis 2016 ; ce site d'entraide vise en partie à combler ce manque, sans s'y substituer.</small></p>
         <div class="callout"><strong>En toute bonne foi :</strong> ce site n'a d'autre but que d'informer et de rendre service. Si la mairie souhaitait un jour récupérer le nom de domaine ou reprendre le projet, je m'engage à le lui céder de bon cœur.</div>
       </div>
     </section>
@@ -862,6 +870,63 @@ PAGES["apropos.html"] = dict(active="apropos",
           <li>Informations et histoire : Wikipédia, base Mérimée (POP, ministère de la Culture), dictionnaire topographique de l'Eure, INSEE, et la communauté d'agglomération Évreux Portes de Normandie.</li>
         </ul>
         <p><small>Une photo vous appartient et vous souhaitez une correction d'attribution ou un retrait ? {mail("Écrivez-moi", "Crédit photo")} — j'y donnerai suite rapidement.</small></p>
+      </div>
+    </section>''')
+
+# ======================================================================
+# MENTIONS LÉGALES
+# ======================================================================
+PAGES["mentions-legales.html"] = dict(active="apropos",
+  title="Mentions légales — le site du village d'Acon",
+  desc="Mentions légales du site d'information d'Acon (Eure) : éditeur, hébergeur, propriété intellectuelle, crédits, données personnelles.",
+  body=f'''    <section class="hero">
+      <div class="wrap">
+        <span class="badge"><span class="dot"></span> Informations légales</span>
+        <h1>Mentions légales</h1>
+        <p class="lead mesure">Qui édite ce site, où il est hébergé, et les règles qui s'y appliquent. Un site d'information bénévole, indépendant et non officiel.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap mesure">
+        <p class="eyebrow">Éditeur</p>
+        <h2>Éditrice du site</h2>
+        <p>Ce site est édité à titre <strong>personnel et bénévole</strong> par une habitante d'Acon (Élodie). Il ne poursuit aucun but commercial et n'émane d'aucune administration.</p>
+        <dl class="def">
+          <dt>Contact</dt><dd>{mail("Afficher l'adresse e-mail", "Mentions légales")}</dd>
+          <dt>Directeur de la publication</dt><dd>L'éditrice du site.</dd>
+        </dl>
+        <div class="tip"><span class="ico" aria-hidden="true">ℹ️</span><p><strong>Site non officiel.</strong> Ce site est <strong>indépendant de la commune d'Acon</strong> : il ne la représente pas et ne l'engage en rien. Pour toute démarche officielle : mairie d'Acon (02 32 32 53 49) et <a href="https://www.service-public.fr">service-public.fr</a>.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap mesure">
+        <p class="eyebrow">Hébergement</p>
+        <h2>Hébergeur</h2>
+        <p>Le site est hébergé par <strong>GitHub Pages</strong> — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (<a href="https://github.com">github.com</a>). Il s'agit de pages statiques, sans base de données.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap mesure">
+        <p class="eyebrow">Contenus</p>
+        <h2>Propriété intellectuelle &amp; crédits</h2>
+        <ul>
+          <li><strong>Textes</strong> — rédigés pour ce site à partir de sources publiques (Wikipédia, base Mérimée du ministère de la Culture, INSEE, service-public.fr, communauté d'agglomération Évreux Portes de Normandie).</li>
+          <li><strong>Photographies du village</strong> — issues de <strong>Wikimedia Commons</strong>, sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">Creative Commons BY-SA</a> (auteurs Davitof et X-Javier), créditées sous chaque image et sur la page <a href="apropos.html">À propos</a>.</li>
+          <li><strong>Cartes postales anciennes</strong> — reproductions des <strong>Archives départementales de l'Eure</strong> (série 8 Fi 2, [1890]-[1950]). Vues anciennes majoritairement dans le domaine public ; reproduction créditée aux Archives de l'Eure.</li>
+        </ul>
+        <p>Vous êtes titulaire de droits sur un contenu et souhaitez une correction ou un retrait ? {mail("Écrivez-moi", "Droits — retrait")} : j'y donnerai suite rapidement.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap mesure">
+        <p class="eyebrow">Vie privée</p>
+        <h2>Données personnelles &amp; cookies</h2>
+        <p>Ce site <strong>ne collecte aucune donnée personnelle</strong>, ne dépose <strong>aucun cookie</strong> de suivi et n'utilise aucun outil de mesure d'audience. Si vous écrivez à l'adresse de contact, votre message et votre adresse e-mail servent uniquement à vous répondre, et ne sont ni conservés à d'autres fins ni transmis à des tiers.</p>
+        <p><small>Les liens vers des sites tiers (service-public.fr, Facebook, Archives de l'Eure, fournisseurs…) sont fournis pour votre information ; leur contenu relève de leurs éditeurs respectifs.</small></p>
       </div>
     </section>''')
 
