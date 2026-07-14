@@ -272,11 +272,15 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .contact-mail::before { content: "✉"; font-size: 1rem; }
 .contact-mail:hover { background: var(--vert-eure); color: #fff; }
 
-/* ---------- Encadré « bon à savoir » ---------- */
-.tip { display: flex; gap: .8rem; background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1.4rem 0; }
-.tip .ico { font-size: 1.4rem; line-height: 1; flex: none; }
+/* ---------- Encadré « bon à savoir » (léger) ---------- */
+.tip { display: flex; gap: .6rem; align-items: baseline; padding: .3rem 0; margin: 1rem 0; color: var(--gris); font-size: .95rem; }
+.tip .ico { font-size: 1.1rem; line-height: 1; flex: none; }
 .tip p { margin: 0; }
 .tip strong { color: var(--vert-fonce); }
+
+/* Invitation à écrire : simple lien, discret */
+.invite { color: var(--gris); font-size: .92rem; margin: 1rem 0 0; }
+.invite a { font-weight: 500; }
 
 /* ---------- Contacts d'urgence (fournisseurs) ---------- */
 .contacts { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: 1.4rem; }
@@ -295,3 +299,44 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 /* ---------- Encart résultat d'élection ---------- */
 .result { background: var(--parchemin-2); border: 1px solid var(--ligne); border-left: 4px solid var(--vert-eure); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; margin: 1.4rem 0; }
 .result .pct { font-family: var(--display); font-size: 1.4rem; color: var(--vert-fonce); }
+
+/* ---------- Widget « Aujourd'hui à Acon » (date, saint, météo) ---------- */
+.today { display: grid; grid-template-columns: 1fr auto; gap: 1rem 1.4rem; align-items: center;
+  background: var(--blanc); border: 1px solid var(--ligne); border-radius: var(--radius);
+  padding: 1rem 1.3rem; margin-top: 1.6rem; box-shadow: 0 14px 30px -24px rgba(33,80,52,.5); }
+.today .jour { font-family: var(--display); font-size: 1.15rem; color: var(--vert-fonce); text-transform: capitalize; }
+.today .saint { color: var(--gris); font-size: .92rem; margin-top: .15rem; }
+.today .meteo { display: flex; align-items: center; gap: .6rem; text-align: right; }
+.today .meteo .ico { font-size: 2rem; line-height: 1; }
+.today .meteo .temp { font-family: var(--display); font-size: 1.7rem; color: var(--vert-fonce); }
+.today .meteo .desc { font-size: .8rem; color: var(--gris); }
+@media (max-width: 520px) { .today { grid-template-columns: 1fr; } .today .meteo { text-align: left; justify-content: flex-start; } }
+
+/* ---------- Carte de situation (OpenStreetMap) ---------- */
+.carte { width: 100%; height: clamp(16rem, 40vw, 24rem); border: 1px solid var(--ligne); border-radius: var(--radius); margin-top: 1.4rem; display: block; }
+.carte-legende { font-size: .8rem; color: var(--gris); margin-top: .5rem; }
+
+/* ---------- Calendrier des déchets (images) ---------- */
+.calendrier { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.2rem; }
+@media (max-width: 720px) { .calendrier { grid-template-columns: 1fr; } }
+.calendrier a { display: block; border: 1px solid var(--ligne); border-radius: var(--radius); overflow: hidden; background: var(--blanc); }
+.calendrier img { width: 100%; display: block; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--vert-fonce); color: #fff; text-decoration: none;
+  padding: .6rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: .95rem; margin-top: 1rem; }
+.btn::before { content: "⬇"; }
+.btn:hover { background: var(--vert-eure); color: #fff; }
+
+/* ---------- Formulaire de contact ---------- */
+.form-contact { display: grid; gap: 1rem; margin-top: 1.4rem; max-width: 34rem; }
+.form-contact label { display: grid; gap: .35rem; font-weight: 500; color: var(--vert-fonce); font-size: .95rem; }
+.form-contact input, .form-contact textarea {
+  font: inherit; color: var(--encre); background: var(--blanc);
+  border: 1px solid var(--ligne); border-radius: 8px; padding: .6rem .7rem; width: 100%; }
+.form-contact input:focus, .form-contact textarea:focus { outline: none; border-color: var(--vert-eure); box-shadow: 0 0 0 3px rgba(46,107,71,.15); }
+.form-contact button { justify-self: start; background: var(--vert-fonce); color: #fff; border: 0; cursor: pointer;
+  font: inherit; font-weight: 600; padding: .65rem 1.3rem; border-radius: 999px; }
+.form-contact button:hover { background: var(--vert-eure); }
+.form-note { font-size: .82rem; color: var(--gris); }
+#form-msg { margin-top: .6rem; font-weight: 500; }
+#form-msg.ok { color: var(--vert-eure); }
+#form-msg.err { color: var(--rouge); }

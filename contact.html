@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Démarches administratives, Acon (Eure)</title>
-  <meta name="description" content="Vos démarches à Acon (Eure) : carte d'identité et passeport, actes d'état civil, listes électorales, recensement citoyen, urbanisme." />
+  <title>Contact, le site du village d'Acon</title>
+  <meta name="description" content="Contacter le site d'information d'Acon (Eure) : une remarque, une correction, une photo ancienne, une entreprise ou un événement à signaler." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -25,10 +25,10 @@
         <a href="index.html">Accueil</a>
         <a href="decouvrir.html">Découvrir</a>
         <a href="histoire.html">Histoire &amp; Archives</a>
-        <a href="infos-pratiques.html" aria-current="page">Infos pratiques</a>
+        <a href="infos-pratiques.html">Infos pratiques</a>
         <a href="entreprises.html">Annuaire</a>
         <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
@@ -36,56 +36,39 @@
   <main id="contenu">
     <section class="hero">
       <div class="wrap">
-        <span class="badge"><span class="dot"></span> Administratif</span>
-        <h1>Vos démarches</h1>
-        <p class="lead mesure">De la carte d'identité au permis de construire : les bons interlocuteurs et les liens officiels, pour s'y retrouver sans perdre de temps.</p>
+        <span class="badge"><span class="dot"></span> Contact</span>
+        <h1>Écrivez-nous</h1>
+        <p class="lead mesure">Une info à corriger, une photo ancienne à partager, une entreprise ou un événement à signaler ? Ce site grandit avec les habitants : votre message est le bienvenu.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap mesure">
-        <p class="eyebrow">Identité</p>
-        <h2>Carte d'identité &amp; passeport</h2>
-        <p>La mairie d'Acon n'est pas équipée pour recueillir les demandes de carte d'identité et de passeport. Il faut prendre rendez-vous dans une mairie équipée d'une station biométrique, vous pouvez choisir n'importe laquelle. Les plus proches sont :</p>
-        <dl class="def">
-          <dt>Verneuil d'Avre et d'Iton</dt><dd>La plus proche côté Eure, 02 32 32 10 81</dd>
-          <dt>Nonancourt</dt><dd>02 32 58 01 90</dd>
-          <dt>Autres</dt><dd>Dreux, Vernouillet, Brezolles (28), Évreux (27)…</dd>
-        </dl>
-        <p><strong>Avant le rendez-vous</strong>, faites la pré-demande en ligne et notez votre numéro : c'est ce qui fait gagner le plus de temps au guichet.</p>
-        <ul>
-          <li>Pré-demande : <a href="https://ants.gouv.fr/">ants.gouv.fr</a> ou l'application <a href="https://france-identite.gouv.fr/">France Identité</a>.</li>
-          <li>Trouver une mairie équipée et un créneau : <a href="https://passeport.ants.gouv.fr/services/geolocaliser-une-mairie-habilitee">rendez-vous ANTS</a>.</li>
-        </ul>
-        <div class="tip"><span class="ico" aria-hidden="true">✅</span><p>La carte d'identité est <strong>gratuite</strong> (sauf perte ou vol). Ne passez jamais par un site payant intermédiaire.</p></div>
+        <p class="eyebrow">Formulaire</p>
+        <h2>Envoyer un message</h2>
+        <form id="form-contact" class="form-contact" action="https://formspree.io/f/VOTRE_ID" method="POST">
+          <label>Votre nom
+            <input type="text" name="nom" autocomplete="name" required>
+          </label>
+          <label>Votre e-mail
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>Votre message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="Message depuis le site d'Acon">
+          <button type="submit">Envoyer</button>
+          <p id="form-msg" role="status" aria-live="polite"></p>
+          <p class="form-note">Votre adresse e-mail sert uniquement à vous répondre. Aucun message n'est conservé à d'autres fins ni transmis à des tiers.</p>
+        </form>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="wrap mesure">
-        <p class="eyebrow">État civil</p>
-        <h2>Actes de naissance, mariage, décès</h2>
-        <p>La demande se fait auprès de la mairie du lieu de l'événement (né, marié ou décédé à Acon → mairie d'Acon ; ailleurs → mairie concernée). C'est <strong>gratuit</strong> et faisable en ligne sur <a href="https://www.service-public.fr/particuliers/vosdroits/N359">service-public.fr</a>.</p>
-
-        <p class="eyebrow" style="margin-top:2.2rem">Citoyenneté</p>
-        <h2>Élections &amp; recensement à 16 ans</h2>
-        <dl class="def">
-          <dt>Listes électorales</dt><dd>Inscription en mairie ou en ligne. Vérifiez votre situation sur <a href="https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE">service-public.fr</a>.</dd>
-          <dt>Recensement citoyen</dt><dd>Obligatoire dès 16 ans (en mairie ou <a href="https://www.service-public.fr/particuliers/vosdroits/F870">en ligne</a>), il ouvre la voie à la Journée défense et citoyenneté.</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap mesure">
-        <p class="eyebrow">Habitat</p>
-        <h2>Urbanisme &amp; travaux</h2>
-        <p>Une clôture, un abri de jardin, une extension, des panneaux solaires, un ravalement ? La plupart des travaux nécessitent une <strong>déclaration préalable</strong> ou un <strong>permis de construire</strong>, à déposer en mairie d'Acon. La mairie vous indiquera le bon formulaire et les modalités de dépôt.</p>
-        <ul>
-          <li>Comprendre sa démarche : <a href="https://www.service-public.fr/particuliers/vosdroits/N319">service-public.fr, urbanisme</a>.</li>
-          <li>Renseignements et dépôt : mairie d'Acon (02 32 32 53 49).</li>
-        </ul>
-        <div class="callout"><strong>Un doute sur la marche à suivre ?</strong> Le portail national <a href="https://www.service-public.fr">service-public.fr</a> couvre l'immense majorité des démarches, et la mairie vous orientera pour tout ce qui est local.</div>
+        <p class="eyebrow">Rappel</p>
+        <h2>Pour vos démarches officielles</h2>
+        <p>Ce site est indépendant et non officiel. Pour l'état civil, l'urbanisme ou toute démarche, adressez-vous à la <strong>mairie d'Acon</strong> (02 32 32 53 49) ou à <a href="https://www.service-public.fr">service-public.fr</a>. Pour les actualités de la commune, suivez la <a href="https://www.facebook.com/acon27570/">page Facebook « Commune d'Acon »</a>.</p>
       </div>
     </section>
   </main>
