@@ -7,18 +7,20 @@ on évite ainsi de dupliquer (et de désynchroniser) le menu sur chaque page.
 Lancer :  python3 build.py   → (re)génère tous les fichiers .html.
 """
 
-# Emblème d'Acon (décoratif, non héraldique officiel) : bouclier vert de l'Eure,
-# clocher de l'église Saint-Denis en or, et l'Avre en vague argent.
+# Emblème d'Acon (décoratif) aux couleurs de la Normandie et de l'Eure :
+# écu de gueules (rouge), bordure d'or ; trois étoiles d'or (les trois hameaux, posées 2 et 1)
+# et une vague d'or en pointe (l'Avre).
+_STAR = ('M0,-2.6 L0.59,-0.81 L2.47,-0.8 L0.95,0.31 L1.53,2.1 '
+         'L0,1.04 L-1.53,2.1 L-0.95,0.31 L-2.47,-0.8 L-0.59,-0.81 Z')
 CREST = (
     '<svg class="crest" viewBox="0 0 32 36" aria-hidden="true">'
-    '<path d="M3 3 H29 V19 C29 27 23.5 31 16 34 C8.5 31 3 27 3 19 Z" fill="#2E6B47" stroke="#C79A3B" stroke-width="2"/>'
-    '<g fill="#E4CB92">'
-    '<rect x="15.3" y="6" width="1.4" height="2.2"/>'
-    '<rect x="14.4" y="6.5" width="3.2" height="1"/>'
-    '<path d="M16 8.4 L19.6 15.4 H12.4 Z"/>'
-    '<rect x="13.2" y="15.4" width="5.6" height="4.2"/>'
+    '<path d="M3 3 H29 V19 C29 27 23.5 31 16 34 C8.5 31 3 27 3 19 Z" fill="#A5332B" stroke="#CBA15A" stroke-width="2"/>'
+    '<g fill="#F1CE6E">'
+    f'<g transform="translate(11,11.6) scale(.82)"><path d="{_STAR}"/></g>'
+    f'<g transform="translate(21,11.6) scale(.82)"><path d="{_STAR}"/></g>'
+    f'<g transform="translate(16,19.4) scale(.82)"><path d="{_STAR}"/></g>'
     '</g>'
-    '<path d="M7 24 q3 -2.6 6 0 t6 0 t6 0" fill="none" stroke="#F4EFE1" stroke-width="2.1" stroke-linecap="round"/>'
+    '<path d="M7.5 25 q2.8 -2.2 5.6 0 t5.6 0 t4.3 0" fill="none" stroke="#F1CE6E" stroke-width="2" stroke-linecap="round"/>'
     '</svg>'
 )
 
@@ -141,19 +143,31 @@ PAGES = {}
 PAGES["index.html"] = dict(active="accueil",
   title="Acon, le village de la vallée de l'Avre (Eure, Normandie)",
   desc="Bienvenue à Acon (Eure, 27570) : découvrir le village, son histoire, et toutes les infos pratiques du quotidien pour les habitants comme pour les visiteurs.",
-  body=f'''    <section class="hero">
-      <div class="wrap hero-media">
-        <div>
-          <span class="badge"><span class="dot"></span> Eure (27) · Normandie</span>
-          <h1>Bienvenue à Acon</h1>
-          <p class="sub">Un village de la vallée de l'Avre, entre Normandie et Perche.</p>
-          <p class="lead">Ici, on connaît ses voisins, on entend l'Avre couler et on prend le temps. Ce site rassemble, au même endroit, tout ce qui fait la vie d'Acon et de ses trois hameaux, Les Brûlés, Le Mesnil et Le Rousset : son histoire, ses démarches du quotidien et les bonnes adresses. Que vous habitiez le village depuis toujours ou que vous veniez d'y poser vos valises, vous êtes chez vous.</p>
+  body=f'''    <section class="hero cover">
+      <div class="cover-bg" style="background-image:url('assets/photos/eglise-saint-denis-02.jpg')"></div>
+      <span class="cover-credit">L'église Saint-Denis. Photo : X-Javier, Wikimedia Commons (CC BY-SA 4.0)</span>
+      <div class="wrap cover-inner">
+        <div class="almanach" id="today">
+          <div class="al-jour">
+            <span class="jour">Aujourd'hui</span>
+            <span class="saint"></span>
+          </div>
+          <div class="meteo">
+            <span class="ico" aria-hidden="true">🌡️</span>
+            <span class="temp">…</span>
+            <span class="desc"></span>
+          </div>
         </div>
-        <figure class="hero-photo">
-          <img src="assets/photos/eglise-saint-denis-01.jpg" alt="L'église Saint-Denis d'Acon" loading="eager">
-          <figcaption>L'église Saint-Denis, au cœur du village. <span class="credit">Photo : Davitof, Wikimedia Commons (CC&nbsp;BY-SA&nbsp;3.0).</span></figcaption>
-        </figure>
+        <span class="badge light"><span class="dot"></span> Eure (27) · Normandie</span>
+        <h1>Bienvenue à Acon</h1>
+        <p class="sub">Un village de la vallée de l'Avre, entre Normandie et Perche.</p>
+        <p class="lead">Ici, on connaît ses voisins, on entend l'Avre couler et l'on prend le temps. Ce site réunit tout ce qui fait la vie d'Acon et de ses trois hameaux, Les Brûlés, Le Mesnil et Le Rousset : son histoire, ses démarches du quotidien et ses bonnes adresses. Que vous soyez d'ici depuis toujours ou tout juste arrivé, vous êtes chez vous.</p>
       </div>
+    </section>
+
+    <div class="wave-sep" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,20 C150,4 300,36 450,20 C600,4 750,36 900,20 C1050,4 1150,30 1200,20 L1200,40 L0,40 Z"/></svg></div>
+
+    <section class="section band-facts">
       <div class="wrap">
         <div class="facts">
           <div><div class="n">478</div><div class="l">habitantes et habitants</div></div>
@@ -209,16 +223,6 @@ PAGES["index.html"] = dict(active="accueil",
       <div class="wrap mesure">
         <p class="eyebrow">Rester en lien</p>
         <h2>La vie du village</h2>
-        <div class="today" id="today">
-          <div>
-            <div class="jour">Aujourd'hui</div>
-            <div class="saint"></div>
-          </div>
-          <div class="meteo">
-            <span class="ico" aria-hidden="true">🌡️</span>
-            <span><span class="temp">…</span><br><span class="desc">Météo à Acon</span></span>
-          </div>
-        </div>
         <p>Pour ne rien manquer des nouvelles, des travaux et des rendez-vous de la commune :</p>
         <ul>
           <li>La page <strong>Actualités &amp; agenda</strong> du site : <a href="actualites.html">les rendez-vous du village</a></li>
@@ -768,8 +772,9 @@ PAGES["dechets.html"] = dict(active="pratique",
           <dt>Téléphone</dt><dd>07 57 49 41 63</dd>
           <dt>Horaires</dt><dd>Lundi, mardi, mercredi et samedi : 9 h à 12 h 45 et 14 h à 17 h 45.<br>Fermée les jeudis, vendredis et dimanches.</dd>
           <dt>Fermetures</dt><dd>Fermée les jours fériés, ainsi qu'à la période de Noël (fermeture annuelle).</dd>
-          <dt>Accès</dt><dd>Sur présentation d'une carte d'accès (gratuite). Renseignez-vous auprès de la mairie ou de l'agglomération, avec un justificatif de domicile.</dd>
+          <dt>Accès</dt><dd>La présentation de la <strong>carte SPI est obligatoire</strong>. Elle est strictement personnelle et ne doit en aucun cas être prêtée à un tiers.</dd>
         </dl>
+        <div class="tip"><span class="ico" aria-hidden="true">🪪</span><p><strong>Pas encore de carte SPI ?</strong> Faites-en la demande gratuitement sur le <a href="https://spi.epn-agglo.fr">portail SPI</a>. Les professionnels doivent demander une <strong>carte SPI professionnel</strong>.</p></div>
         <div class="tip"><span class="ico" aria-hidden="true">♻️</span><p><strong>Moins jeter, c'est possible :</strong> composter, coller un « Stop pub » sur la boîte aux lettres, donner ou réparer plutôt que jeter, déposer les textiles en bornes dédiées.</p></div>
       </div>
     </section>''')
@@ -893,18 +898,20 @@ PAGES["apropos.html"] = dict(active="apropos",
   body=f'''    <section class="hero">
       <div class="wrap">
         <span class="badge"><span class="dot"></span> À propos</span>
-        <h1>Ce site, en toute transparence</h1>
-        <p class="lead mesure">Un site de village fait avec le cœur, par une habitante, pour les habitants et les curieux d'Acon.</p>
+        <h1>Une histoire de villages</h1>
+        <p class="lead mesure">Ce site est né d'un attachement : celui d'une habitante pour Acon, sa vallée et ses gens. Et d'un drôle de clin d'œil du destin entre deux villages de Normandie.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap mesure">
         <p class="eyebrow">Le mot de l'autrice</p>
-        <h2>Pourquoi ce site</h2>
-        <p>Je suis venue habiter à Acon il y a quelques années, et j'ai eu un vrai coup de cœur pour cette petite commune et la gentillesse de ses habitants. De ce quotidien est née l'envie de rassembler, au même endroit, tout ce qui aide à se sentir bien ici : découvrir le village et son histoire, mais aussi retrouver sans effort les infos utiles de tous les jours, écoles, déchets, eau, démarches, bonnes adresses.</p>
-        <p style="font-family:var(--display); font-style:italic; color:var(--vert-fonce); margin-top:1.2rem">, Élodie</p>
-        <div class="tip"><span class="ico" aria-hidden="true">✉️</span><p>Une remarque, une correction, une idée, une photo à partager ? Cette adresse est là pour ça : {mail("m'écrire")}</p></div>
+        <h2>D'Agon à Acon</h2>
+        <p>J'ai grandi en Normandie, dans une commune au nom presque jumeau : <strong>Agon</strong>. En posant mes valises à Acon, j'ai découvert avec émotion que « Agon » est l'une des plus anciennes façons d'écrire le nom du village, attestée dès 1230. Comme si, sans le savoir, je n'avais jamais tout à fait quitté le village de mon enfance.</p>
+        <p>De ce coup de cœur pour Acon et pour la gentillesse de ses habitants est venue une envie simple : réunir ici, au même endroit, tout ce qui aide à se sentir chez soi. L'histoire du village et ses vieilles cartes postales, bien sûr, mais aussi les petites choses du quotidien qu'on cherche toujours au mauvais moment : les jours de collecte, l'école, l'eau, les démarches, les bonnes adresses.</p>
+        <p>Ce site n'a rien d'officiel et ne prétend pas tout dire. Il grandit doucement, au fil des saisons et de vos contributions. Si vous y trouvez de quoi vous faciliter la vie ou raviver un souvenir, il aura rempli sa mission.</p>
+        <p class="signature">Élodie</p>
+        <p class="invite">Une remarque, une correction, une photo ancienne à partager ? {mail("Écrivez-moi")}, c'est toujours un plaisir.</p>
       </div>
     </section>
 
