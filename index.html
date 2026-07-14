@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acon — Village de l'Eure, en Normandie</title>
-  <meta name="description" content="Site d'information indépendant sur la commune d'Acon (Eure, 27) : son village, son histoire, ses archives et les infos pratiques du quotidien." />
+  <title>Acon — le village de la vallée de l'Avre (Eure, Normandie)</title>
+  <meta name="description" content="Bienvenue à Acon (Eure, 27570) : découvrir le village, son histoire, et toutes les infos pratiques du quotidien pour les habitants comme pour les visiteurs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,19 +12,12 @@
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
+  <div class="notice">Site bénévole et indépendant, sans lien avec la mairie — pour vos démarches officielles, rendez-vous sur <a href="https://mairie-acon.fr">mairie-acon.fr</a>.</div>
 
-  <!-- Bandeau : rappelle clairement que le site n'est pas officiel -->
-  <div class="notice">Site indépendant, non officiel — pour vos démarches, voir <a href="https://mairie-acon.fr">le site de la mairie</a>.</div>
-
-  <!-- ===== NAV partagée : dupliquée sur chaque page. Toute modif à répercuter sur les 4 pages. ===== -->
   <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="index.html" aria-label="Accueil — Acon">
-        <svg class="crest" viewBox="0 0 30 34" aria-hidden="true">
-          <path d="M2 2 h26 v16 c0 8 -6 12 -13 14 C8 30 2 26 2 18 Z" fill="#2E6B47" stroke="#C79A3B" stroke-width="2"/>
-          <path d="M15 9 c3 3 3 8 0 13 c-3 -5 -3 -10 0 -13 Z" fill="#C79A3B"/>
-          <path d="M15 13 l4 2 M15 17 l-4 2" stroke="#E4CB92" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        </svg>
+        <svg class="crest" viewBox="0 0 30 34" aria-hidden="true"><path d="M2 2 h26 v16 c0 8 -6 12 -13 14 C8 30 2 26 2 18 Z" fill="#2E6B47" stroke="#C79A3B" stroke-width="2"/><path d="M15 9 c3 3 3 8 0 13 c-3 -5 -3 -10 0 -13 Z" fill="#C79A3B"/><path d="M15 13 l4 2 M15 17 l-4 2" stroke="#E4CB92" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
         <span><b>Acon</b><small>Eure · Normandie</small></span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -40,81 +33,127 @@
   </header>
 
   <main id="contenu">
-    <!-- Héros -->
     <section class="hero">
+      <div class="wrap hero-media">
+        <div>
+          <span class="badge"><span class="dot"></span> Eure (27) · Normandie</span>
+          <h1>Bienvenue à Acon</h1>
+          <p class="sub">Un village de la vallée de l'Avre, entre Normandie et Perche.</p>
+          <p class="lead">Ici, on connaît ses voisins, on entend l'Avre couler et on prend le temps. Ce site rassemble, au même endroit, tout ce qui fait la vie d'Acon et de ses trois hameaux — Les Brûlés, Le Mesnil et Le Rousset : son histoire, ses démarches du quotidien et les bonnes adresses. Que vous habitiez le village depuis toujours ou que vous veniez d'y poser vos valises, vous êtes chez vous.</p>
+        </div>
+        <figure class="hero-photo">
+          <img src="assets/photos/eglise-saint-denis-01.jpg" alt="L'église Saint-Denis d'Acon" loading="eager">
+          <figcaption>L'église Saint-Denis, au cœur du village. <span class="credit">Photo : Davitof — Wikimedia Commons (CC&nbsp;BY-SA&nbsp;3.0).</span></figcaption>
+        </figure>
+      </div>
       <div class="wrap">
-        <span class="badge"><span class="dot"></span> Eure (27) · Normandie</span>
-        <h1>Acon</h1>
-        <p class="sub">Un village de la vallée de l'Avre, entre Normandie et Perche.</p>
-        <p class="lead">Bienvenue sur le site d'information du village d'Acon et de ses trois hameaux — Les Brûlés, Le Mesnil et Le Rousset. Un espace simple et objectif pour découvrir la commune, son histoire et ses informations pratiques, à destination des habitants comme des visiteurs.</p>
+        <div class="facts">
+          <div><div class="n">478</div><div class="l">habitantes et habitants</div></div>
+          <div><div class="n">3</div><div class="l">hameaux</div></div>
+          <div><div class="n">27570</div><div class="l">code postal</div></div>
+          <div><div class="n">Avre</div><div class="l">la rivière du village</div></div>
+        </div>
       </div>
     </section>
 
-    <!-- Accès rapides -->
     <section class="section section-alt">
       <div class="wrap">
-        <p class="eyebrow kicker">Explorer</p>
+        <p class="eyebrow kicker">Par où commencer</p>
         <div class="grid">
-          <a class="card" href="decouvrir.html">
-            <h3>Découvrir le village</h3>
-            <p>Sa situation dans la vallée de l'Avre, ses hameaux, son patrimoine et sa nature.</p>
+          <a class="card lien" href="decouvrir.html">
+            <span class="tag">Le village</span>
+            <h3>Découvrir Acon</h3>
+            <p>La vallée de l'Avre, les trois hameaux, l'église Saint-Denis et un patrimoine mégalithique rare.</p>
             <p class="arrow">→</p>
           </a>
-          <a class="card" href="histoire.html">
+          <a class="card lien" href="histoire.html">
+            <span class="tag">Mémoire</span>
             <h3>Histoire &amp; Archives</h3>
-            <p>Mémoire du village, frise chronologique et collection de cartes postales anciennes.</p>
+            <p>Des dolmens du Néolithique à aujourd'hui : la longue histoire du village, et où retrouver ses archives.</p>
             <p class="arrow">→</p>
           </a>
-          <a class="card" href="infos-pratiques.html">
+          <a class="card lien" href="infos-pratiques.html">
+            <span class="tag">Au quotidien</span>
             <h3>Infos pratiques</h3>
-            <p>Mairie, numéros utiles, déchets, vie associative et agenda de la commune.</p>
+            <p>Mairie, démarches, écoles, déchets, eau et énergie, emploi : l'essentiel réuni et à jour.</p>
+            <p class="arrow">→</p>
+          </a>
+          <a class="card lien" href="entreprises.html">
+            <span class="tag">Économie locale</span>
+            <h3>Annuaire</h3>
+            <p>Commerces, artisans, producteurs et services d'Acon. Faites vivre — et connaître — l'activité du village.</p>
             <p class="arrow">→</p>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Repères -->
     <section class="section">
       <div class="wrap mesure">
         <p class="eyebrow">En bref</p>
-        <h2>Un petit village du sud de l'Eure</h2>
-        <p>Acon se trouve au sud du département de l'Eure, en région Normandie, à la limite du département de l'Eure-et-Loir (28) et aux portes du Perche. La commune est traversée par la vallée de l'Avre et compte 478 habitants, les Aconnais et les Aconnaises. Son maire est Christophe Blin.</p>
-        <p>Ce site est édité de façon bénévole et indépendante. Il n'émane pas de la mairie et ne remplace pas les canaux officiels : il vise simplement à rassembler, de manière claire et neutre, ce qui fait la vie et la mémoire du village.</p>
+        <h2>Un village du sud de l'Eure</h2>
+        <p>Acon veille sur la vallée de l'Avre, au sud du département de l'Eure, tout près de l'Eure-et-Loir (28) et aux portes du Perche. La commune réunit 478 Aconnais et Aconnaises, répartis entre le bourg et les hameaux des Brûlés, du Mesnil et du Rousset. Elle fait partie du canton de Verneuil d'Avre et d'Iton et de la communauté d'agglomération Évreux Portes de Normandie. Son maire est <strong>Christophe Blin</strong>.</p>
+        <p>Ce site est écrit bénévolement par une habitante. Il ne remplace pas la mairie : il donne simplement, avec le cœur, de quoi mieux connaître Acon et se faciliter la vie de tous les jours.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap mesure">
+        <p class="eyebrow">Rester en lien</p>
+        <h2>La vie du village</h2>
+        <p>Pour ne rien manquer des nouvelles, des travaux et des rendez-vous de la commune :</p>
+        <ul>
+          <li><strong>Page Facebook « Commune d'Acon »</strong> — photos et actualités partagées par les habitants : <a href="https://www.facebook.com/acon27570/">facebook.com/acon27570</a></li>
+          <li><strong>PanneauPocket</strong> — les alertes et informations de la mairie sur votre téléphone : <a href="https://app.panneaupocket.com/ville/970037196-acon-27570">appli PanneauPocket · Acon</a></li>
+        </ul>
+        <div class="tip">
+          <span class="ico" aria-hidden="true">💬</span>
+          <p>Une info à corriger, une photo ancienne à partager, une bonne adresse à ajouter ? Ce site grandit avec vous. <a class="contact-mail" data-user="elodie.saintemarie+Acon" data-domain="gmail.com" data-subject="Site d'Acon" href="#">Écrivez-moi</a></p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER partagé : dupliqué sur chaque page. ===== -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="cols">
         <div>
           <h3>Acon</h3>
-          <p><small>Site d'information indépendant sur la commune d'Acon (Eure). Village et hameaux des Brûlés, du Mesnil et du Rousset, dans la vallée de l'Avre.</small></p>
+          <p><small>Le site de village d'Acon (Eure, 27), un coin de la vallée de l'Avre aux portes du Perche. Un lieu pour se sentir chez soi, entre le bourg et les hameaux des Brûlés, du Mesnil et du Rousset.</small></p>
         </div>
         <div>
-          <h3>Pages</h3>
+          <h3>Le village</h3>
           <p><small>
             <a href="index.html">Accueil</a><br>
             <a href="decouvrir.html">Découvrir</a><br>
             <a href="histoire.html">Histoire &amp; Archives</a><br>
-            <a href="infos-pratiques.html">Infos pratiques</a><br>
-            <a href="ecole.html">Écoles &amp; transports</a><br>
-            <a href="dechets.html">Déchets</a><br>
-            <a href="entreprises.html">Annuaire des entreprises</a><br>
+            <a href="entreprises.html">Annuaire</a><br>
             <a href="apropos.html">À propos</a>
           </small></p>
         </div>
         <div>
-          <h3>Officiel</h3>
+          <h3>Vie pratique</h3>
+          <p><small>
+            <a href="infos-pratiques.html">Infos pratiques</a><br>
+            <a href="demarches.html">Démarches</a><br>
+            <a href="ecole.html">Écoles &amp; transports</a><br>
+            <a href="emploi.html">Emploi</a><br>
+            <a href="dechets.html">Déchets &amp; tri</a><br>
+            <a href="eau-energie.html">Eau &amp; énergie</a>
+          </small></p>
+        </div>
+        <div>
+          <h3>Officiel &amp; urgences</h3>
           <p><small>
             <a href="https://mairie-acon.fr">Mairie d'Acon</a><br>
-            <a href="https://www.service-public.fr">Service-Public.fr</a>
+            <a href="https://www.service-public.fr">Service-Public.fr</a><br>
+            Urgences : 112 · SAMU 15<br>
+            Élec. (Enedis) : 09 72 67 50 27<br>
+            Gaz (GRDF) : 0 800 47 33 33
           </small></p>
         </div>
       </div>
-      <p class="foot-note"><small>Site indépendant et non officiel, sans lien avec la mairie d'Acon. © <span id="an">2026</span> — contenu à vocation informative. <span class="todo">[Ajouter une page « Mentions légales ».]</span></small></p>
+      <p class="foot-note"><small>Site d'information bénévole et non officiel, sans lien avec la mairie d'Acon. © <span class="js-annee">2026</span>. Photographies sous licence Creative Commons (voir <a href="apropos.html">À propos</a>). Fait avec soin pour les Aconnais et les Aconnaises.</small></p>
     </div>
   </footer>
 
