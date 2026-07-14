@@ -299,6 +299,9 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 /* ---------- Encart résultat d'élection ---------- */
 .result { background: var(--parchemin-2); border: 1px solid var(--ligne); border-left: 4px solid var(--vert-eure); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; margin: 1.4rem 0; }
 .result .pct { font-family: var(--display); font-size: 1.4rem; color: var(--vert-fonce); }
+.result .prochain { margin: 0; }
+.result .date-next { font-family: var(--display); font-size: 1.55rem; color: var(--vert-fonce); text-transform: capitalize; }
+.result .next-note { margin: .4rem 0 0; color: var(--gris); font-size: .88rem; }
 
 /* ---------- Widget « Aujourd'hui à Acon » (date, saint, météo) ---------- */
 .today { display: grid; grid-template-columns: 1fr auto; gap: 1rem 1.4rem; align-items: center;

@@ -76,7 +76,25 @@
     return { ico: "🌡️", desc: "" };
   }
 
-  // 4) Formulaire de contact (envoi sans recharger la page).
+  // 4) Prochain ramassage des déchets : jeudi, une semaine sur deux.
+  //    Ancre = jeudi 8 janvier 2026 (semaine paire). On avance de 14 jours.
+  var dateNext = document.querySelector(".date-next");
+  if (dateNext) {
+    var joursFr = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+    var moisFr = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+                  "août", "septembre", "octobre", "novembre", "décembre"];
+    var t0 = new Date(); t0.setHours(0, 0, 0, 0);
+    var d = new Date(2026, 0, 8);
+    while (d < t0) { d.setDate(d.getDate() + 14); }
+    var libelle = joursFr[d.getDay()] + " " + d.getDate() + " " + moisFr[d.getMonth()];
+    var jours = Math.round((d - t0) / 86400000);
+    if (jours === 0) libelle += " (aujourd'hui)";
+    else if (jours === 1) libelle += " (demain)";
+    else libelle += " (dans " + jours + " jours)";
+    dateNext.textContent = libelle;
+  }
+
+  // 5) Formulaire de contact (envoi sans recharger la page).
   var form = document.getElementById("form-contact");
   if (form) {
     var msg = document.getElementById("form-msg");
