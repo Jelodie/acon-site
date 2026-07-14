@@ -161,16 +161,6 @@ PAGES["index.html"] = dict(active="accueil",
           <div><div class="n">27570</div><div class="l">code postal</div></div>
           <div><div class="n">Avre</div><div class="l">la rivière du village</div></div>
         </div>
-        <div class="today" id="today">
-          <div>
-            <div class="jour">Aujourd'hui</div>
-            <div class="saint"></div>
-          </div>
-          <div class="meteo">
-            <span class="ico" aria-hidden="true">🌡️</span>
-            <span><span class="temp">…</span><br><span class="desc">Météo à Acon</span></span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -219,6 +209,16 @@ PAGES["index.html"] = dict(active="accueil",
       <div class="wrap mesure">
         <p class="eyebrow">Rester en lien</p>
         <h2>La vie du village</h2>
+        <div class="today" id="today">
+          <div>
+            <div class="jour">Aujourd'hui</div>
+            <div class="saint"></div>
+          </div>
+          <div class="meteo">
+            <span class="ico" aria-hidden="true">🌡️</span>
+            <span><span class="temp">…</span><br><span class="desc">Météo à Acon</span></span>
+          </div>
+        </div>
         <p>Pour ne rien manquer des nouvelles, des travaux et des rendez-vous de la commune :</p>
         <ul>
           <li>La page <strong>Actualités &amp; agenda</strong> du site : <a href="actualites.html">les rendez-vous du village</a></li>
@@ -765,8 +765,10 @@ PAGES["dechets.html"] = dict(active="pratique",
         <h2>La déchèterie de rattachement</h2>
         <dl class="def">
           <dt>Adresse</dt><dd>Déchèterie de <strong>La Madeleine-de-Nonancourt</strong>, 16 rue de Damville, 27320 La Madeleine-de-Nonancourt.</dd>
+          <dt>Téléphone</dt><dd>07 57 49 41 63</dd>
+          <dt>Horaires</dt><dd>Lundi, mardi, mercredi et samedi : 9 h à 12 h 45 et 14 h à 17 h 45.<br>Fermée les jeudis, vendredis et dimanches.</dd>
+          <dt>Fermetures</dt><dd>Fermée les jours fériés, ainsi qu'à la période de Noël (fermeture annuelle).</dd>
           <dt>Accès</dt><dd>Sur présentation d'une carte d'accès (gratuite). Renseignez-vous auprès de la mairie ou de l'agglomération, avec un justificatif de domicile.</dd>
-          <dt>Horaires</dt><dd>Généralement du lundi au samedi (sauf jeudi), matin et après-midi. Les horaires changent selon la saison : vérifiez sur le <a href="https://www.setom.fr">site du SETOM</a> avant de vous déplacer.</dd>
         </dl>
         <div class="tip"><span class="ico" aria-hidden="true">♻️</span><p><strong>Moins jeter, c'est possible :</strong> composter, coller un « Stop pub » sur la boîte aux lettres, donner ou réparer plutôt que jeter, déposer les textiles en bornes dédiées.</p></div>
       </div>
@@ -1004,7 +1006,7 @@ PAGES["contact.html"] = dict(active="contact",
       <div class="wrap mesure">
         <p class="eyebrow">Formulaire</p>
         <h2>Envoyer un message</h2>
-        <form id="form-contact" class="form-contact" action="https://formspree.io/f/VOTRE_ID" method="POST">
+        <form id="form-contact" class="form-contact" action="https://formspree.io/f/xvzegwop" method="POST">
           <label>Votre nom
             <input type="text" name="nom" autocomplete="name" required>
           </label>
