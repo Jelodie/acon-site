@@ -14,13 +14,14 @@ _STAR = ('M0,-2.6 L0.59,-0.81 L2.47,-0.8 L0.95,0.31 L1.53,2.1 '
          'L0,1.04 L-1.53,2.1 L-0.95,0.31 L-2.47,-0.8 L-0.59,-0.81 Z')
 CREST = (
     '<svg class="crest" viewBox="0 0 32 36" aria-hidden="true">'
-    '<path d="M3 3 H29 V19 C29 27 23.5 31 16 34 C8.5 31 3 27 3 19 Z" fill="#A5332B" stroke="#CBA15A" stroke-width="2"/>'
+    '<path d="M3 3 H29 V19 C29 27 23.5 31 16 34 C8.5 31 3 27 3 19 Z" fill="#A5332B" stroke="#C9A15A" stroke-width="2"/>'
+    '<path d="M5 5 H27 V18.6 C27 25.3 22.3 28.8 16 31.5 C9.7 28.8 5 25.3 5 18.6 Z" fill="none" stroke="#E7C982" stroke-width=".7" opacity=".6"/>'
     '<g fill="#F1CE6E">'
-    f'<g transform="translate(11,11.6) scale(.82)"><path d="{_STAR}"/></g>'
-    f'<g transform="translate(21,11.6) scale(.82)"><path d="{_STAR}"/></g>'
-    f'<g transform="translate(16,19.4) scale(.82)"><path d="{_STAR}"/></g>'
+    f'<g transform="translate(11,11.4) scale(.8)"><path d="{_STAR}"/></g>'
+    f'<g transform="translate(21,11.4) scale(.8)"><path d="{_STAR}"/></g>'
+    f'<g transform="translate(16,18.9) scale(.8)"><path d="{_STAR}"/></g>'
     '</g>'
-    '<path d="M7.5 25 q2.8 -2.2 5.6 0 t5.6 0 t4.3 0" fill="none" stroke="#F1CE6E" stroke-width="2" stroke-linecap="round"/>'
+    '<path d="M7 25.2 q2.25 -2 4.5 0 t4.5 0 t4.5 0 t4.5 0" fill="none" stroke="#F1CE6E" stroke-width="1.7" stroke-linecap="round"/>'
     '</svg>'
 )
 
@@ -47,6 +48,13 @@ def header(active):
     nav = "\n".join(links)
     return f'''  <a class="skip" href="#contenu">Aller au contenu</a>
   <div class="notice">Site bénévole et indépendant, sans lien avec la mairie d'Acon, pour vos démarches officielles, voir <a href="https://www.service-public.fr">service-public.fr</a>.</div>
+
+  <div class="almanach-band" id="today">
+    <div class="wrap alm-inner">
+      <div class="alm-date"><span class="jour">Aujourd'hui</span><span class="saint"></span></div>
+      <div class="meteo"><span class="ico" aria-hidden="true"></span><span class="temp"></span><span class="desc"></span></div>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="wrap bar">
@@ -147,25 +155,11 @@ PAGES["index.html"] = dict(active="accueil",
       <div class="cover-bg" style="background-image:url('assets/photos/eglise-saint-denis-02.jpg')"></div>
       <span class="cover-credit">L'église Saint-Denis. Photo : X-Javier, Wikimedia Commons (CC BY-SA 4.0)</span>
       <div class="wrap cover-inner">
-        <div class="almanach" id="today">
-          <div class="al-jour">
-            <span class="jour">Aujourd'hui</span>
-            <span class="saint"></span>
-          </div>
-          <div class="meteo">
-            <span class="ico" aria-hidden="true">🌡️</span>
-            <span class="temp">…</span>
-            <span class="desc"></span>
-          </div>
-        </div>
-        <span class="badge light"><span class="dot"></span> Eure (27) · Normandie</span>
         <h1>Bienvenue à Acon</h1>
         <p class="sub">Un village de la vallée de l'Avre, entre Normandie et Perche.</p>
         <p class="lead">Ici, on connaît ses voisins, on entend l'Avre couler et l'on prend le temps. Ce site réunit tout ce qui fait la vie d'Acon et de ses trois hameaux, Les Brûlés, Le Mesnil et Le Rousset : son histoire, ses démarches du quotidien et ses bonnes adresses. Que vous soyez d'ici depuis toujours ou tout juste arrivé, vous êtes chez vous.</p>
       </div>
     </section>
-
-    <div class="wave-sep" aria-hidden="true"><svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,20 C150,4 300,36 450,20 C600,4 750,36 900,20 C1050,4 1150,30 1200,20 L1200,40 L0,40 Z"/></svg></div>
 
     <section class="section band-facts">
       <div class="wrap">
@@ -739,8 +733,11 @@ PAGES["dechets.html"] = dict(active="pratique",
       <div class="wrap mesure">
         <p class="eyebrow">Encombrants</p>
         <h2>Encombrants &amp; déchets verts</h2>
-        <p>Un canapé, un matelas, un vieux meuble ? La collecte des <strong>encombrants se fait sur rendez-vous</strong>, jusqu'à 2 fois par an et par foyer (2 m³ par passage). Prise de rendez-vous auprès de <strong>L'ABRI</strong> :</p>
+        <p>Un vieux meuble, une armoire, une table, des chaises ? La collecte des <strong>encombrants se fait sur rendez-vous</strong>, gratuitement, jusqu'à 2 fois par an et par foyer (2 m³ par passage). Elle est assurée par l'association <strong>L'ABRI</strong>, qui redonne vie au mobilier dans sa ressourcerie.</p>
+        <p><strong>Seul le mobilier est collecté</strong> (meubles, armoires, tables, chaises, buffets, étagères).<br>
+        Ne sont <strong>pas</strong> pris en charge et doivent être apportés en déchèterie : gravats et plâtre, déchets verts, électroménager, sanitaires, vitres et miroirs, pneus, produits dangereux.</p>
         <dl class="def">
+          <dt>Rendez-vous</dt><dd>L'ABRI, du mardi au vendredi de 8 h à 18 h</dd>
           <dt>Téléphone</dt><dd>06 63 78 05 56</dd>
           <dt>Courriel</dt><dd>encombrants.epn@abriasso.org</dd>
         </dl>
@@ -773,7 +770,7 @@ PAGES["dechets.html"] = dict(active="pratique",
           <dt>Fermetures</dt><dd>Fermée les jours fériés, ainsi qu'à la période de Noël (fermeture annuelle).</dd>
           <dt>Accès</dt><dd>La présentation de la <strong>carte SPI est obligatoire</strong>. Elle est strictement personnelle et ne doit en aucun cas être prêtée à un tiers.</dd>
         </dl>
-        <div class="tip"><span class="ico" aria-hidden="true">🪪</span><p><strong>Pas encore de carte SPI ?</strong> Faites-en la demande gratuitement sur le <a href="https://spi.epn-agglo.fr">portail SPI</a>. Les professionnels doivent demander une <strong>carte SPI professionnel</strong>.</p></div>
+        <div class="tip"><span class="ico" aria-hidden="true">🪪</span><p><strong>Pas encore de carte SPI ?</strong> Faites-en la demande gratuitement sur le <a href="https://spi.epn-agglo.fr">portail SPI</a>.<br>Les professionnels doivent demander une <strong>carte SPI professionnel</strong>.</p></div>
         <div class="tip"><span class="ico" aria-hidden="true">♻️</span><p><strong>Moins jeter, c'est possible :</strong> composter, coller un « Stop pub » sur la boîte aux lettres, donner ou réparer plutôt que jeter, déposer les textiles en bornes dédiées.</p></div>
       </div>
     </section>''')

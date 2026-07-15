@@ -372,10 +372,11 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .hero.cover {
   position: relative; isolation: isolate; overflow: hidden;
   padding: clamp(4rem, 12vw, 8rem) 0 clamp(3rem, 7vw, 5.5rem);
-  background: none;
+  background: #1E4A33;  /* fond de secours si l'image ne charge pas */
 }
 .cover-bg {
   position: absolute; inset: 0; z-index: -2;
+  background-color: #1E4A33;
   background-size: cover; background-position: center 38%;
   transform: scale(1.03);
 }
@@ -398,23 +399,23 @@ figure.photo figcaption b { color: var(--vert-fonce); font-weight: 600; }
 .badge.light { background: rgba(252,246,231,.14); border-color: rgba(252,246,231,.35); color: #FCF6E7; backdrop-filter: blur(3px); }
 .badge.light .dot { background: var(--or-clair); }
 
-/* ---------- Almanach : date · saint · météo, tout en haut ---------- */
-.almanach {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem 1.4rem; flex-wrap: wrap;
-  background: rgba(252,246,231,.92); color: var(--encre);
-  border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
-  padding: .55rem 1.1rem; margin-bottom: 1.8rem;
-  box-shadow: 0 16px 34px -22px rgba(0,0,0,.5); backdrop-filter: blur(4px);
-  width: fit-content; max-width: 100%;
+/* ---------- Bande almanach : date · saint · météo, tout en haut ---------- */
+.almanach-band {
+  background: var(--parchemin-2);
+  border-bottom: 1px solid var(--ligne);
+  font-size: .84rem;
 }
-.almanach .al-jour { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
-.almanach .jour { font-family: var(--display); font-weight: 600; color: var(--vert-fonce); text-transform: capitalize; font-size: 1.02rem; }
-.almanach .saint { color: var(--gris); font-size: .86rem; }
-.almanach .meteo { display: inline-flex; align-items: center; gap: .4rem; padding-left: 1rem; border-left: 1px solid var(--ligne); }
-.almanach .meteo .ico { font-size: 1.25rem; }
-.almanach .meteo .temp { font-family: var(--display); font-weight: 600; color: var(--vert-fonce); font-size: 1.05rem; }
-.almanach .meteo .desc { font-size: .82rem; color: var(--gris); }
-@media (max-width: 460px) { .almanach { border-radius: 16px; } .almanach .meteo { border-left: 0; padding-left: 0; } }
+.alm-inner { display: flex; align-items: center; justify-content: space-between; gap: .6rem 1.2rem; padding: .4rem 0; flex-wrap: wrap; }
+.alm-date { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.almanach-band .jour { font-weight: 600; color: var(--vert-fonce); text-transform: capitalize; }
+.almanach-band .saint { color: var(--gris); }
+.almanach-band .saint::before { content: "·"; margin-right: .5rem; color: var(--or); }
+.almanach-band .meteo { display: inline-flex; align-items: center; gap: .45rem; color: var(--gris); }
+.almanach-band .meteo:empty { display: none; }
+.almanach-band .meteo .ico { font-size: 1.05rem; }
+.almanach-band .meteo .temp { font-weight: 600; color: var(--encre); }
+.almanach-band .meteo .desc { color: var(--gris); }
+@media (max-width: 420px) { .almanach-band .meteo .desc { display: none; } }
 
 /* ---------- Séparateur en vague (l'Avre) ---------- */
 .wave-sep { line-height: 0; margin-top: -1px; background: #182a1d; }
