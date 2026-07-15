@@ -21,7 +21,10 @@ CREST = (
     f'<g transform="translate(21,11.4) scale(.8)"><path d="{_STAR}"/></g>'
     f'<g transform="translate(16,18.9) scale(.8)"><path d="{_STAR}"/></g>'
     '</g>'
-    '<path d="M7 25.2 q2.25 -2 4.5 0 t4.5 0 t4.5 0 t4.5 0" fill="none" stroke="#F1CE6E" stroke-width="1.7" stroke-linecap="round"/>'
+    # L'Avre : deux vagues symétriques, creux centré en x=16, sans toucher le bord
+    '<path d="M8 24 C9.75 24 9.75 22.5 11.5 22.5 C13.75 22.5 13.75 25.2 16 25.2 '
+    'C18.25 25.2 18.25 22.5 20.5 22.5 C22.25 22.5 22.25 24 24 24" '
+    'fill="none" stroke="#F1CE6E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>'
     '</svg>'
 )
 
